@@ -1,0 +1,51 @@
+<style>
+
+body{
+    font-family: serif
+}
+h1 {
+  background-color: black;
+  color: white;
+   text-align: center;
+}
+a:link, a:visited {
+  background-color: #ADD8E6;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+}
+a:hover, a:active {
+ background-color: blue;
+}
+table, th,tr{
+  border: 1px solid;
+  text-align: center;
+  height: 70px;
+  width: 50%;
+}
+td{
+  border: 1px solid;
+  text-align: center;
+
+}
+
+</style>
+<p>
+  <strong>Shop Name:</strong>
+  <%= @shop.shop_name %>
+</p>
+
+<p>
+  <strong>Shop Description:</strong>
+  <%= @shop.shop_description %>
+</p>
+
+<h2>Products</h2>
+<%= render @shop.products %>
+
+<h2>Add a Product:</h2>
+<%= render 'products/form' %>
+
+<%= link_to 'Edit', edit_shop_path(@shop) %> |
+<%= link_to 'Back', shops_path %>
